@@ -1,0 +1,26 @@
+class BlackjackGame {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        
+        String[] suits = {"Hearts", "Spades", "Clubs", "Diamonds"};
+        
+        String[] ranks = {"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"};
+        
+        Card[] deck = new Card[52];
+        int deckIndex = -1;
+        
+        for(String suit : suits){
+            deckIndex++;
+            
+            for(int i = 0; i < ranks.length; i++){
+                int value = i  <= 8 ? i + 2 : 10;
+                if(i == 12){
+                    value = 11;
+                }
+                deck[deckIndex] = new Card(suit, ranks[i], value );
+            }
+            
+        }
+        
+    }
+}
