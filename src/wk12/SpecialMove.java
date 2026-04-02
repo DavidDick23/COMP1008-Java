@@ -1,0 +1,3 @@
+interface SpecialMove {
+    int specialAttack();
+}
