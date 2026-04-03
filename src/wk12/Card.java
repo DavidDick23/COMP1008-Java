@@ -1,6 +1,7 @@
 class Card{
     private String suit, rank;
     private int value;
+    private boolean used;
     
     public String getSuit(){
         return suit;
@@ -19,6 +20,12 @@ class Card{
     }
     public void setValue(int value){
         this.value = value;
+    }
+    public boolean isUsed(){
+        return used;
+    }
+    public void setAsUsed(){
+        used = true;
     }
     public Card(String suit, String rank, int value){
         setSuit(suit);
