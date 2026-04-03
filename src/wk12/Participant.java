@@ -4,7 +4,7 @@ abstract class Participant{
     private int handTotal;
     private int handIndex;
     private final int MAX_NUM_CARDS = 10;
-    public final int BLACKJACK = 21;
+    public static final int BLACKJACK = 21;
     
     public String getName(){
         return name;
@@ -21,17 +21,18 @@ abstract class Participant{
     public void getHand(){
         System.out.println(name + " cards are: ");
         for(Card current : hand){
+            if(current == null) break;
             System.out.println(current);
         }
     }
     public void addCardToHand(Card card){
-        hand[handIndex] = card;
+        hand[handIndex++] = card;
         generateHandTotal();
     }
     private void generateHandTotal(){
         int total = 0;
         for(int i = 0; i < handIndex; i++){
-            total += hand[handIndex].getValue();
+            total += hand[i].getValue();
         }
         setHandTotal(total);
     }
