@@ -1,3 +1,4 @@
+import java.util.Random;
 class Game {
     public static void main(String[] args) {
         Fighter fighter = new Fighter("Batman", 100, 15, 50);
